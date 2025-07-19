@@ -1,0 +1,94 @@
+body {
+    background-color: rgb(197, 145, 77);
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+nav {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+button {
+    background-color: rgb(197, 145, 77);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(197, 145, 77);
+}
+
+#content {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+
+}
+
+#content div {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+}
+
+.my-text {
+    white-space: pre-wrap;
+}
