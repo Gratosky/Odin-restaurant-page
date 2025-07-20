@@ -1,28 +1,72 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
 body {
     background-color: rgb(197, 145, 77);
     color: rgb(255, 255, 255);
     font-family: 'Courier New', Courier, monospace;
-    margin: 0;
     padding: 0;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
 
 }
-
-h2 {
-    font-size: 2rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
 
 
 nav {
@@ -42,6 +86,9 @@ button {
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
@@ -49,46 +96,196 @@ button:hover {
     color: rgb(197, 145, 77);
 }
 
-#content {
-    width: 80%;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.my-text {
+    white-space: pre-wrap;
+}
 
+.menu-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+}
+
+.section-header {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgb(197, 145, 77);
+    padding-bottom: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+}
+
+.menu-item-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    text-align: center;
-}
-
-h3 {
-    font-size: 1.5rem;
-    margin-top: 20px;
-
-}
-
-p {
-    font-size: 1rem;
-    line-height: 1.5;
-
-}
-
-#content div {
-    margin: 10px 0;
+    margin-bottom: 20px;
     padding: 10px;
     background-color: rgb(240, 240, 240);
     border-radius: 5px;
     width: 100%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.menu-item-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(103, 102, 102);
+    margin: 0;
+    text-align: center;
+    
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.menu-item-description {
+    font-size: 1rem;
+    color: rgb(100, 100, 100);
+    margin-top: 5px;
 
 }
 
-.my-text {
-    white-space: pre-wrap;
+.content-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: fit-content;
+    box-sizing: border-box;
+    min-width: 600px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(103, 102, 102);
+    margin: 0;
+    text-align: center;
+    
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.contact-item-number {
+    font-size: 1rem;
+    color: rgb(100, 100, 100);
+    margin-top: 5px;
+
+}
+
+.contact-item-header {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    border-bottom: 2px solid rgb(197, 145, 77);
+}
+
+.h1-welcome {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.h1-welcome::before {
+    content: '🐻';
+    width:100px;
+    height: 20px;
+    color: rgb(197, 145, 77);
+    margin: 0 auto 10px auto;
+    padding-left: 5px;
+}
+.h1-welcome::after {
+    content: '🌿';
+    width: 50px;
+    height: 2px;
+    color: rgb(197, 145, 77);
+    margin: 10px auto 0 auto;
+}
+/* Welcome paragraph styling */
+/* This paragraph will be used to welcome users to the restaurant page */
+/* It will have a larger font size, centered text, and a lighter color for better readability */
+/* It will also have some padding for better spacing */
+/* The max-width will ensure it doesn't stretch too wide on larger screens */
+/* The font-weight will be lighter for a more casual feel */
+/* The letter-spacing will add a slight spacing between letters for better readability */       
+
+
+
+.p-welcome {
+    font-size: 1.2rem;
+    text-align: center;
+    color: rgb(197, 145, 77);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    max-width: 600px;
+    padding: 0 20px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    text-wrap: balance;
+}
+
+.p-welcome::after {
+    content: '🍁';
+    
+    width: 50px;
+    height: 2px;
+    color: rgb(197, 145, 77);
+    
+}
+.p-welcome::before {
+    content: "✨";
+    
+    width: 50px;
+    height: 2px;
+    color: rgb(197, 145, 77);
 }

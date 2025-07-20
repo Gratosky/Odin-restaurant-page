@@ -1,34 +1,39 @@
+//helper function to create contact items
+function createContactItem(name, number) {
+    console.log('heyya')
+    const contactDiv = document.createElement('div')
+    contactDiv.classList.add('contact-item-container')
+
+    const nameEl = document.createElement('h3')
+    nameEl.textContent = name
+    nameEl.classList.add('contact-item-name')
+
+    const contactEl = document.createElement('p')
+    contactEl.textContent = number
+    contactEl.classList.add('contact-item-number')
+
+    contactDiv.appendChild(nameEl)
+    contactDiv.appendChild(contactEl)
+
+    return contactDiv
+}
+
+createContactItem()
+
 function contactTab() {
     const contentDiv = document.getElementById('content')
+    contentDiv.classList.add('content-div')
 
-    const h1 = document.createElement('h1')
-    h1.textContent = 'Contact Us'
+    const h1Contact = document.createElement('h1')
+    h1Contact.textContent = 'Contact Us'
+    h1Contact.classList.add('contact-item-header')
 
-    const div1 = document.createElement('div')
-    const h3 = document.createElement('h3')
+   const contact1 = createContactItem('Mama', '555-555-5576')
+   const contact2 = createContactItem('Papa Bear', '546-776-4456')
 
-    h3.textContent = `Mama Bear`
-    div1.appendChild(h3)
-
-    const paraDiv = document.createElement('p')
-    paraDiv.classList.add('my-text')
-    paraDiv.textContent = 'Chef\n555-555-5554'
-    div1.appendChild(paraDiv)
-
-    contentDiv.appendChild(h1)
-    contentDiv.appendChild(div1)
-
-    const div2 = document.createElement('div')
-    const h3D = document.createElement('h3')
-    h3D.textContent = 'Papa Juna'
-    div2.appendChild(h3D)
-
-    const para2Div = document.createElement('p')
-    para2Div.classList.add('my-text')
-    para2Div.textContent = 'Chef Luni\n567-776-5433'
-    div2.appendChild(para2Div)
-
-    contentDiv.appendChild(div2)
+    contentDiv.appendChild(h1Contact)
+    contentDiv.appendChild(contact1)
+    contentDiv.appendChild(contact2)
 }
 
 export { contactTab }

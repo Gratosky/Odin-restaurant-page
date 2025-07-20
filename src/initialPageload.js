@@ -1,15 +1,19 @@
 function initialPageload() {
     const contentDiv = document.getElementById('content');
+    contentDiv.classList.add('content-div')
 
     
-    const h1 = document.createElement('h1')
-    h1.textContent = `TEBBY'S PARADISE`
-    contentDiv.appendChild(h1)
+    const h1Welcome = document.createElement('h1')
+    h1Welcome.textContent = `TEBBY'S PARADISE`
+    h1Welcome.classList.add('h1-welcome')
+    contentDiv.appendChild(h1Welcome)
 
-    const para = document.createElement('p')
-    para.textContent = `The best place in town!`
-    contentDiv.appendChild(para)
+    const paraWelcome = document.createElement('p')
+    paraWelcome.textContent = `Welcome to Tebb'y Restaurant...the best place in town!`
+    paraWelcome.classList.add('p-welcome')
+    contentDiv.appendChild(paraWelcome)
 
+    
 }
 
 export { initialPageload }
