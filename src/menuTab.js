@@ -27,11 +27,11 @@ function menuTabLoad() {
 
     const h2Beverages = document.createElement('h2')
     h2Beverages.textContent = `Beverages`
-    h2Beverages.classList.add('section-header')
+    h2Beverages.classList.add('menu-section-header')
 
    const h2Food = document.createElement('h2')
    h2Food.textContent = `Food`
-   h2Food.classList.add('section-header')
+   h2Food.classList.add('menu-section-header')
 
    //Create individual menu items using helper
    const teaItem = createMenuItem('Tea', 'Warm breakfast blend')

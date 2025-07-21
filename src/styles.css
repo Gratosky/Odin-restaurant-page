@@ -54,10 +54,31 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+:root {
+  /* 11. Set a default font family */
+  font-family: 'Arial', sans-serif;
+  --primary-color: rgb(197, 145, 77);
+  --secondary-color: rgb(255, 255, 255);
+  --text-color: rgb(0, 0, 0);
+  --background-color: rgb(240, 240, 240);
+  --button-hover-color: rgb(197, 145, 77);
+  --button-hover-bg: rgb(255, 255, 255);
+  --text-heading-common: rgb(100, 100, 100);
+  --menu-item-name-color: rgb(103, 102, 102);
+  --menu-item-description-color: rgb(100, 100, 100);
+  --contact-item-name-color: rgb(103, 102, 102);
+  --contact-item-number-color: rgb(100, 100, 100);
+  --welcome-text-color: rgb(197, 145, 105);
+  --welcome-text-bg: rgb(255, 255, 255);
+  --menu-section-header: rgb(100, 100, 100);
+  --bg-common: rgb(240, 240, 240);
+
+}
+
 
 body {
-    background-color: rgb(197, 145, 77);
-    color: rgb(255, 255, 255);
+    background-color: var(--primary-color);
+    color: var(--text-color);
     font-family: 'Courier New', Courier, monospace;
     padding: 0;
 
@@ -68,10 +89,11 @@ body {
 
 }
 
-
+/* NAVIGATION BAR STYLING */
+/* This navigation bar will be used to navigate through the restaurant page */
 nav {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     padding: 10px;
     width: 100%;
     text-align: center;
@@ -80,8 +102,8 @@ nav {
 }
 
 button {
-    background-color: rgb(197, 145, 77);
-    color: rgb(255, 255, 255);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     border: none;
     padding: 10px 20px;
     margin: 5px;
@@ -92,41 +114,78 @@ button {
 }
 
 button:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(197, 145, 77);
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-color);
 }
 
 .my-text {
     white-space: pre-wrap;
 }
+/* NAVIGATION BAR STYLING END */
 
-.menu-title {
+/* TEXT COMMON STYLING */
+/* This text will be used in various sections of the restaurant page */
+.text-heading-common {
+    font-size: 1rem;
+    color: var(--text-heading-common);
+    margin: 10px 0;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-wrap: balance;
+    text-transform: uppercase;
+}
+
+/* Welcome section styling */
+
+.h1-welcome {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
-    color: rgb(100, 100, 100);
-    font-weight: bold;
-    text-transform: uppercase;
+    color: var(--welcome-text-color);
     letter-spacing: 1px;
-    
 }
 
-.section-header {
-    font-size: 1.5rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: rgb(100, 100, 100);
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid rgb(197, 145, 77);
-    padding-bottom: 5px;
-    width: 100%;
+.h1-welcome::before {
+    content: '🐻';
+    font-size: 1.1em;
+}
+
+.h1-welcome::after {
+    content: '🌿';
+   font-size: 1.1em;
+}
+
+.p-welcome {
+    font-size: 1.2rem;
+    color: var(--welcome-text-color);
+    margin-bottom: 20px;
+    line-height: 1.5;
     max-width: 600px;
-    margin-left: auto;
+    padding: 20px 20px;
+    font-weight: 300;
+    text-align: center;
+    background-color: var(--bg-common);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
 
+.p-welcome::after {
+    content: '🍁';
+    font-size: 1.1em;
+}
+
+.p-welcome::before {
+    content: "✨";
+    font-size: 1.1em;
+}
+
+/* Welcome section styling end */
+
+/*-- MENU STYLING START-- */
 .menu-item-container {
     display: flex;
     flex-direction: column;
@@ -134,17 +193,43 @@ button:hover {
     justify-content: center;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: rgb(240, 240, 240);
+    background-color: var(--bg-common);
     border-radius: 5px;
     width: 100%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
+    color: var(--text-color);
+}
+
+.menu-section-header {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: var(--menu-section-header);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+}
+
+.menu-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--text-heading-common);
+    
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .menu-item-name {
-    font-weight: bold;
     font-size: 1.2rem;
-    color: rgb(103, 102, 102);
+    color: var(--menu-item-name-color);
     margin: 0;
     text-align: center;
     
@@ -155,11 +240,14 @@ button:hover {
 
 .menu-item-description {
     font-size: 1rem;
-    color: rgb(100, 100, 100);
+    color: var(--menu-item-description-color);
     margin-top: 5px;
 
 }
 
+/*-- MENU STYLING END-- */
+
+/*-- CONTACT STYLING START-- */
 .content-div {
     display: flex;
     flex-direction: column;
@@ -170,7 +258,7 @@ button:hover {
     box-sizing: border-box;
     min-width: 600px;
     margin: 0 auto;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--secondary-color);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
@@ -184,7 +272,7 @@ button:hover {
     justify-content: center;
     margin-bottom: 20px;
     padding: 10px;
-    background-color: rgb(240, 240, 240);
+    background-color: var(--bg-common);
     border-radius: 5px;
     width: 100%;
     max-width: 400px;
@@ -192,9 +280,9 @@ button:hover {
 }
 
 .contact-item-name {
-    font-weight: bold;
+    
     font-size: 1.2rem;
-    color: rgb(103, 102, 102);
+    color: var(--contact-item-name-color);
     margin: 0;
     text-align: center;
     
@@ -205,7 +293,7 @@ button:hover {
 
 .contact-item-number {
     font-size: 1rem;
-    color: rgb(100, 100, 100);
+    color: var(--contact-item-number-color);
     margin-top: 5px;
 
 }
@@ -215,77 +303,13 @@ button:hover {
     margin-top: 20px;
     margin-bottom: 10px;
     text-align: center;
-    color: rgb(100, 100, 100);
-    font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding-bottom: 5px;
     width: 100%;
     max-width: 600px;
     margin-left: auto;
-    border-bottom: 2px solid rgb(197, 145, 77);
+    border-bottom: 2px solid var(--primary-color);
 }
+/*-- CONTACT STYLING END-- */
 
-.h1-welcome {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: rgb(100, 100, 100);
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.h1-welcome::before {
-    content: '🐻';
-    width:100px;
-    height: 20px;
-    color: rgb(197, 145, 77);
-    margin: 0 auto 10px auto;
-    padding-left: 5px;
-}
-.h1-welcome::after {
-    content: '🌿';
-    width: 50px;
-    height: 2px;
-    color: rgb(197, 145, 77);
-    margin: 10px auto 0 auto;
-}
-/* Welcome paragraph styling */
-/* This paragraph will be used to welcome users to the restaurant page */
-/* It will have a larger font size, centered text, and a lighter color for better readability */
-/* It will also have some padding for better spacing */
-/* The max-width will ensure it doesn't stretch too wide on larger screens */
-/* The font-weight will be lighter for a more casual feel */
-/* The letter-spacing will add a slight spacing between letters for better readability */       
-
-
-
-.p-welcome {
-    font-size: 1.2rem;
-    text-align: center;
-    color: rgb(197, 145, 77);
-    margin-bottom: 20px;
-    line-height: 1.5;
-    max-width: 600px;
-    padding: 0 20px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    text-wrap: balance;
-}
-
-.p-welcome::after {
-    content: '🍁';
-    
-    width: 50px;
-    height: 2px;
-    color: rgb(197, 145, 77);
-    
-}
-.p-welcome::before {
-    content: "✨";
-    
-    width: 50px;
-    height: 2px;
-    color: rgb(197, 145, 77);
-}
